@@ -29,22 +29,7 @@
 
     <div id="plan-output"></div>
 
-    <script>
-        document.getElementById('lifestyle-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const goal = document.getElementById('goal').value;
-            const exercise = document.getElementById('exercise').value;
-            const diet = document.getElementById('diet').value;
-
-            const response = await fetch('/generate-plan', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ goal, exercise, diet })
-            });
-
-            const data = await response.json();
-            document.getElementById('plan-output').innerHTML = `<pre>${data.plan}</pre>`;
-        });
-    </script>
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>

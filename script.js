@@ -6,7 +6,7 @@ document.getElementById('lifestyle-form').addEventListener('submit', async funct
     const diet = document.getElementById('diet').value;
 
     try {
-        const response = await fetch('/api/app/generate-plan', {
+        const response = await fetch('/api/app', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ goal, exercise, diet })

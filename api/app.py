@@ -27,7 +27,7 @@ def generate_plan():
         max_tokens=500
     )
 
-    return jsonify({"plan": response['choices'][0].text})
+    return jsonify({"plan": response['choices'][0]['text']})
 
 
 if __name__ == '__main__':

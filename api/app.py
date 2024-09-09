@@ -12,7 +12,7 @@ app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST'])  # This maps to /api/app
 def generate_plan():
     data = request.json
     goal = data.get('goal')
@@ -27,8 +27,8 @@ def generate_plan():
         max_tokens=500
     )
 
-    return jsonify({"plan": response['choices'][0]['text']})
+    return jsonify({"plan": response['choices'][0].text})
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
